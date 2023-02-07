@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0...3.12)
+cmake_minimum_required(VERSION 3.0...3.26)
 
 project(open62541cpp)
 set (PROJECT_NAME "open62541cpp")
