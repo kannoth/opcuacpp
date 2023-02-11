@@ -6,4 +6,4 @@ extern "C" {
 #include <open62541/server_config_default.h>
 }
 
-#endif
+#endif  // _OPEN_62541_C_SERVER_HPP

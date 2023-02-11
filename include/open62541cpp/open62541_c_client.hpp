@@ -5,4 +5,4 @@ extern "C" {
 #include <open62541/client.h>
 }
 
-#endif
+#endif  // _OPEN_62541_C_CLIENT_HPP
