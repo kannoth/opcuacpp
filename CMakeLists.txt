@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0...3.26)
 
-project(open62541cpp)
+project(open62541cpp VERSION 0.0.1 DESCRIPTION "An wrapper for open62541 written in modern C++")
 set (PROJECT_NAME "open62541cpp")
 set (PROJECT_SHORTNAME "open62541cpp")
 
@@ -16,6 +16,7 @@ else()
 endif()
 
 include_directories("${OPCUACPP_INCLUDE_DIR}")
+#add_library(${PROJECT_NAME} ${OPCUACPP_INCLUDE_DIR})
 
 #libraries
 set(UA_LOGLEVEL 600)
@@ -27,3 +28,7 @@ add_subdirectory(src)
 
 #tests
 add_subdirectory(tests)
+
+#examples
+add_subdirectory(examples)
+
