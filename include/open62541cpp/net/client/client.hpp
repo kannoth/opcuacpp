@@ -14,18 +14,13 @@ struct UA_ClientDeleter {
 };
 
 class Client {
-    std::atomic<bool> abort_;
-
  private:
   std::unique_ptr<UA_Client, UA_ClientDeleter> client_;
 
  public:
-  explicit Client();
+  Client();
   virtual ~Client() = default;
-
-  // TODO: Return run and abort status
-  bool connect(std::string endpoint);
-  bool abort();
+  void connect(const std::string& endpoint);
 };
 
 }  // namespace net
