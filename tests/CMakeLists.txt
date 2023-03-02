@@ -7,3 +7,4 @@ target_link_libraries(test_main gtest)
 add_library(tests::main ALIAS test_main)
 
 add_subdirectory(server)
+add_subdirectory(client)
