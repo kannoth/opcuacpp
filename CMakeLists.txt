@@ -26,4 +26,5 @@ add_subdirectory(lib/googletest)
 add_subdirectory(src)
 
 #tests
+include(CTest)
 add_subdirectory(tests)
