@@ -10,7 +10,7 @@ target_sources(${PROJECT_NAME}
     client_test.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR})
-target_link_libraries(${PROJECT_NAME} open62541cpp::client gtest tests::main)
+target_link_libraries(${PROJECT_NAME} open62541cpp::client open62541cpp::server gtest tests::main)
 
 include(GoogleTest)
 gtest_discover_tests(${PROJECT_NAME})

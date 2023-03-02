@@ -3,10 +3,7 @@
 
 int main() {
   opcua::net::Client client;
-  if (client.connect("localhost::8080"))
-    std::cout << "Connected with server" << std::endl;
-  else
-    std::cout << "unable to connect with server" << std::endl;
-  
+  client.connect("localhost::8080");
+
   return 0;
 }
