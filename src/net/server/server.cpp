@@ -23,6 +23,9 @@ void Server::run() {
 
   if (UA_STATUSCODE_GOOD != status) { /* throw exception */
   }
+  else{
+    std::cout<<"Server Started"<<std::endl;
+  }
 
   while (!abort_.load()) {
     UA_UInt16 timeout = UA_Server_run_iterate(server_.get(), false);
