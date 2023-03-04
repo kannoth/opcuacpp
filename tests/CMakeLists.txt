@@ -8,3 +8,4 @@ add_library(tests::main ALIAS test_main)
 
 add_subdirectory(server)
 add_subdirectory(client)
+add_subdirectory(exception)
