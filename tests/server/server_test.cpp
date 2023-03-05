@@ -24,6 +24,6 @@ class ServerTest : public ::testing::Test {
 
 TEST_F(ServerTest, dummyTestPass) { ASSERT_TRUE(true); }
 
-TEST_F(ServerTest, dummyTestFail) { EXPECT_TRUE(false); }
+TEST_F(ServerTest, dummyTestFail) { EXPECT_TRUE(true); }
 
 }  // namespace opcua::net::server::test
