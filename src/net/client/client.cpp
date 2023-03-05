@@ -1,4 +1,5 @@
 #include <iostream>
+#include <open62541cpp/common/exception/exceptions_extended.hpp>
 #include <open62541cpp/net/client/client.hpp>
 #include <open62541cpp/net/client/client_exceptions.hpp>
 
@@ -16,10 +17,7 @@ Client::Client() : client_(UA_Client_new()) {
 
 void Client::connect(const std::string& endpoint) {
   UA_StatusCode status = UA_Client_connect(client_.get(), endpoint.c_str());
-  if (status != UA_STATUSCODE_GOOD) {
-    ;
-  }
-  // throw
+  diag::throw_from_status(status);
 }
 
 }  // namespace net
