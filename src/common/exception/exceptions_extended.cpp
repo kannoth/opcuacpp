@@ -933,5 +933,12 @@ void throw_from_status(uint32_t status_code) {
     }
   }
 }
+
+const char* get_status_description_string(uint32_t status_code) {
+  auto val = status_description_table.find(status_code);
+  if (val == nullptr) return "Unknown error";
+  return val->second;
+}
+
 }  // namespace diag
 }  // namespace opcua
