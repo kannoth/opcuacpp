@@ -13,32 +13,32 @@ struct LogSeverityStr_;
 
 template <>
 struct LogSeverityStr_<LogSeverity::trace> {
-  static constexpr char value[] = "[TRACE]";
+  static constexpr const char* value = "[TRACE]";
 };
 
 template <>
 struct LogSeverityStr_<LogSeverity::debug> {
-  static constexpr char value[] = "[DEBUG]";
+  static constexpr const char* value = "[DEBUG]";
 };
 
 template <>
 struct LogSeverityStr_<LogSeverity::info> {
-  static constexpr char value[] = "[INFO ]";
+  static constexpr const char* value = "[INFO ]";
 };
 
 template <>
 struct LogSeverityStr_<LogSeverity::warning> {
-  static constexpr char value[] = "[WARN ]";
+  static constexpr const char* value = "[WARN ]";
 };
 
 template <>
 struct LogSeverityStr_<LogSeverity::error> {
-  static constexpr char value[] = "[ERROR]";
+  static constexpr const char* value = "[ERROR]";
 };
 
 template <>
 struct LogSeverityStr_<LogSeverity::fatal> {
-  static constexpr char value[] = "[FATAL]";
+  static constexpr const char* value = "[FATAL]";
 };
 
 template <typename Backend>
