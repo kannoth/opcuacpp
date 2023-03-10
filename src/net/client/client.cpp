@@ -14,7 +14,7 @@ Client::Client() : client_(UA_Client_new()) {
   UA_ClientConfig_setDefault(UA_Client_getConfig(client_.get()));
 }
 
-void Client::connect(const std::string& endpoint) {
+void Client::connect(const type::ua_string& endpoint) {
   UA_StatusCode status = UA_Client_connect(client_.get(), endpoint.c_str());
   if (status != UA_STATUSCODE_GOOD) {
     ;
