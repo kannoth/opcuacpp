@@ -4,6 +4,8 @@
 #include <atomic>
 #include <memory>
 #include <open62541cpp/open62541_c_server.hpp>
+#include <open62541cpp/util/console_logger.hpp>
+#include <open62541cpp/util/logger.hpp>
 #include <thread>
 
 namespace opcua {
@@ -18,6 +20,7 @@ class Server {
   int port_;
   std::unique_ptr<UA_Server, UA_ServerDeleter> server_;
   std::atomic<bool> abort_;
+  util::Logger<util::ConsoleLogger> logger_;
 
  public:
   explicit Server(int port);

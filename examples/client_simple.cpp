@@ -3,7 +3,7 @@
 
 int main() {
   opcua::net::Client client;
-  client.connect("localhost::8080");
+  client.connect("opc.tcp://localhost:8080");
 
   return 0;
 }

@@ -91,7 +91,7 @@ class ConsoleLogger {
     print("]");
     print(" ");
     print(std::forward<Args>(args)...);
-    print("\n");
+    print("\x1B[0m\n");
   }
 
   template <typename T, typename... Args>

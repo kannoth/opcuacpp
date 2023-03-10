@@ -23,4 +23,4 @@ target_sources(${OPCUACPP_CLIENT_LIB_NAME}
 target_include_directories(${OPCUACPP_CLIENT_LIB_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
 
 add_library(${PROJECT_SHORTNAME}::${OPCUACPP_CLIENT_LIB_SUFFIX} ALIAS ${OPCUACPP_CLIENT_LIB_NAME})
-target_link_libraries(${OPCUACPP_CLIENT_LIB_NAME} open62541::open62541 )
+target_link_libraries(${OPCUACPP_CLIENT_LIB_NAME} open62541::open62541 open62541cpp::exception)
