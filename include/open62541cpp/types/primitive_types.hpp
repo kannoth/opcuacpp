@@ -25,6 +25,8 @@ using ua_sint64 = int64_t;
 // TODO : Create seperate class for
 // ua_string
 using ua_string = std::string;
+using ua_byte_string = ua_string;
+using ua_guid = ua_string;
 
 }  // namespace type
 }  // namespace opcua

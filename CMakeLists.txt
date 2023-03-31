@@ -5,12 +5,12 @@ set (PROJECT_NAME "open62541cpp")
 set (PROJECT_SHORTNAME "open62541cpp")
 
 # At the moment we give support from 11
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 
 set(OPCUACPP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 
 if(MSVC)
-    add_compile_options(/W3 /WX /std:c++11)
+    add_compile_options(/W3 /WX /std:c++20)
 else()
     add_compile_options(-W -Wall )#-Werror)
 endif()
