@@ -30,7 +30,7 @@ class UaNodeId {
           UA_NODEID_STRING_ALLOC(ns_index, const_cast<char*>(id.c_str()));
     } else if constexpr (std::same_as<ua_guid, IdType>) {
       *c_node_ =
-          UA_NODEID_GUID(ns_index, UA_GUID(const_cast<char*>(id.c_str())));
+          UA_NODEID_STRING_ALLOC(ns_index, const_cast<char*>(id.c_str()));
     } else if constexpr (std::same_as<ua_byte_string, IdType>) {
       *c_node_ =
           UA_NODEID_BYTESTRING_ALLOC(ns_index, const_cast<char*>(id.c_str()));
@@ -43,17 +43,22 @@ class UaNodeId {
 
   const IdType get_id() const {
     if constexpr (std::same_as<ua_string, IdType>) {
-      return ua_string(c_node_->identifier.string);
-    } else if constexpr (std::same_as<ua_guid, IdType>) {
-      return ua_guid(c_node_->identifier.guid);
+      return ua_string(reinterpret_cast<char*>(c_node_->identifier.string.data),
+                       c_node_->identifier.string.length);
+    } else if constexpr (std::same_as<ua_guid,
+                                      IdType>) {  // TODO : change to UA_Guid
+      return ua_string(reinterpret_cast<char*>(c_node_->identifier.string.data),
+                       c_node_->identifier.string.length);
     } else if constexpr (std::same_as<ua_byte_string, IdType>) {
-      return ua_byte_string(c_node_->identifier.byteString);
+      return ua_byte_string(
+          reinterpret_cast<char*>(c_node_->identifier.byteString.data),
+          c_node_->identifier.byteString.length);
     } else {
-      return c_node_->identifier.numeric;
+      return this->c_node_->identifier.numeric;
     }
   }
 
-  const ua_uint16 get_ns_index() const { c_node_->namespaceIndex; }
+  ua_uint16 get_namespace_index() const { return c_node_->namespaceIndex; }
 
   UA_NodeId* get_cptr() const { return c_node_.get(); }
 };
