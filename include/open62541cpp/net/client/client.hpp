@@ -3,6 +3,7 @@
 
 #include <atomic>
 #include <memory>
+#include <open62541cpp/types/types.hpp>
 #include <open62541cpp/open62541_c_client.hpp>
 #include <thread>
 
@@ -20,7 +21,7 @@ class Client {
  public:
   Client();
   virtual ~Client() = default;
-  void connect(const std::string& endpoint);
+  void connect(const type::ua_string& endpoint);
 };
 
 }  // namespace net
