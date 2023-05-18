@@ -1,17 +1,19 @@
 #ifndef PRIMITIVE_TYPES_HPP
 #define PRIMITIVE_TYPES_HPP
 
-#include <open62541cpp/net/client/client.hpp>
+//#include <open62541cpp/net/client/client.hpp>
+#include <open62541/types.h>
 
 // TODO : std::string_view adoption
 // #if __cplusplus >= 201703L
 // #include <string_view>
 // #else  // __cplusplus >= 201703L
+#include <cstdint>
 #include <string>
 // #endif
 
 namespace opcua {
-namespace type {
+namespace types {
 
 using ua_boolean = bool;
 using ua_byte = uint8_t;

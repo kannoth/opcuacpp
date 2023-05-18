@@ -2,7 +2,7 @@
 #include <open62541cpp/types/ua_node_id.hpp>
 
 namespace opcua {
-namespace type {
+namespace types {
 
 void UA_NodeId_deleter::operator()(UA_NodeId* id) { 
     if (id != nullptr) UA_NodeId_clear(id); 

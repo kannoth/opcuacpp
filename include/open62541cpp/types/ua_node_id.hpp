@@ -1,10 +1,11 @@
 #ifndef UA_NODE_ID_HPP
 #define UA_NODE_ID_HPP
 
-#include <open62541cpp/types/primitive_types.hpp>
+#include <memory>
+#include <open62541cpp/types/types.hpp>
 
 namespace opcua {
-namespace type {
+namespace types {
 
 struct UA_NodeId_deleter {
   void operator()(UA_NodeId* id);

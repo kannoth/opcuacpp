@@ -3,7 +3,7 @@
 #include <open62541cpp/types/primitive_types.hpp>
 #include <open62541cpp/types/ua_node_id.hpp>
 
-namespace opcua::type::test {
+namespace opcua::types::test {
 
 class OpcuaNodeIdTest : public ::testing::Test {};
 
