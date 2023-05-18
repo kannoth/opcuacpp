@@ -21,7 +21,7 @@ class Client {
  public:
   Client();
   virtual ~Client() = default;
-  void connect(const type::ua_string& endpoint);
+  void connect(const types::ua_string& endpoint);
 };
 
 }  // namespace net
