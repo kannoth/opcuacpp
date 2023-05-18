@@ -5,9 +5,9 @@ A C++ abstraction over open62541
 ### How to build?
 ```bash
 # Clone with all submodules
-git@github.com:kannoth/opcuacpp.git --recursive
-cd open62541cpp 
-mkdir && cd build
+git clone git@github.com:kannoth/opcuacpp.git --recursive
+cd opcuacpp 
+mkdir build && cd build
 cmake ..
 # Run the unit tests
 ctest
