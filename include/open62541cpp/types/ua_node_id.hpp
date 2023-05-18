@@ -34,6 +34,8 @@ class UaNodeId {
   ua_uint16 get_namespace_index() const;
 
   UA_NodeId* get_cptr() const;
+
+  ua_boolean is_null() const;
 };
 
 }  // namespace types
