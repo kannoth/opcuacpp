@@ -49,4 +49,10 @@ TEST_F(OpcuaNodeIdTest, NodeIdGuid) {
   EXPECT_NE(node_id_1.get_namespace_index(), node_id_2.get_namespace_index());
 }
 
-}  // namespace opcua::type::test
+TEST_F(OpcuaNodeIdTest, NullNodeIdGuid) {
+  auto node_id_null = UaNodeId<ua_uint32>{};
+
+  EXPECT_TRUE(node_id_null.is_null());
+}
+
+}  // namespace opcua::types::test

@@ -60,6 +60,12 @@ UA_NodeId* UaNodeId<IdType>::get_cptr() const {
 }
 
 template <class IdType>
+  requires is_valid_ua_node_id<IdType>
+ua_boolean UaNodeId<IdType>::is_null() const {
+  return UA_NodeId_isNull(get_cptr());
+}
+
+template <class IdType>
 bool operator==(const UaNodeId<IdType>& lhs, const UaNodeId<IdType>& rhs) {
   if (&lhs == &rhs) return true;
 
