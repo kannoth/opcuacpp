@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME})
 target_sources( ${PROJECT_NAME}
     PRIVATE
     ua_node_id_test.cpp
+    ua_qualified_name_test.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR})

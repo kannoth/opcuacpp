@@ -9,17 +9,14 @@ target_sources(${OPCUACPP_TYPES_LIB_NAME}
     PRIVATE
     ${OPCUACPP_TYPES_INCLUDE_DIR}/primitive_types.hpp
     ${OPCUACPP_TYPES_INCLUDE_DIR}/types.hpp
-    #${OPCUACPP_TYPES_INCLUDE_DIR}/ua_node_id.hpp
-    #${OPCUACPP_TYPES_INCLUDE_DIR}/ua_node_id_numeric.hpp
-    #${OPCUACPP_TYPES_INCLUDE_DIR}/ua_node_id_string.hpp
-    #${OPCUACPP_TYPES_INCLUDE_DIR}/ua_node_id_byte_string.hpp
-    #${OPCUACPP_TYPES_INCLUDE_DIR}/ua_node_id_guid.hpp
+    ${OPCUACPP_TYPES_INCLUDE_DIR}/ua_node_id.hpp
+    ${OPCUACPP_TYPES_INCLUDE_DIR}/ua_qualified_name.hpp
 )
 
 target_sources(${OPCUACPP_TYPES_LIB_NAME}
     PRIVATE
     ${CMAKE_CURRENT_SRC_DIR}ua_node_id.cpp
-    #${CMAKE_CURRENT_SRC_DIR}ua_node_id_numeric.cpp
+    ${CMAKE_CURRENT_SRC_DIR}ua_qualified_name.cpp
 )
 
 target_include_directories(${OPCUACPP_TYPES_LIB_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
